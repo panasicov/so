@@ -25,10 +25,10 @@ class FileManipulator:
         self.reader = reader
         self.writer = writer
 
-    def manipulate_files(self):
-        data = self.reader.read_file()
-        # Manipulări suplimentare se pot face aici cu `data`
-        self.writer.write_file(data)
+    def write_file(self, data):
+        with open(self.file_path, 'w') as file:
+            file.write(data)
+        print(f"Data written to {self.file_path}.")
 
 
 # Exemplu de utilizare
